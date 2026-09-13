@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        XezzFrist — QR Generator
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="qr.css"
+    >
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         NAVBAR
+    =================================================== -->
+
+    <header class="qr-navbar">
+
+        <a
+            href="index.html"
+            class="back-link"
+        >
+            ←
+            <span>
+                Back to XezzFrist
+            </span>
+        </a>
+
+
+        <div class="qr-brand">
+
+            <span class="qr-logo">
+                X
+            </span>
+
+            <span>
+                Xezz<span>Frist</span>
+            </span>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         MAIN
+    =================================================== -->
+
+    <main class="qr-page">
+
+
+        <!-- ==================================================
+             HEADER
+        =================================================== -->
+
+        <section class="qr-header">
+
+            <span class="qr-label">
+                DIGITAL TOOL
+            </span>
+
+            <h1>
+                QR Generator
+            </h1>
+
+            <p>
+                Buat QR code dengan cepat dan mudah untuk
+                teks, link, atau informasi lainnya.
+            </p>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             GENERATOR
+        =================================================== -->
+
+        <section class="qr-generator">
+
+
+            <!-- INPUT -->
+
+            <div class="qr-input-section">
+
+                <label
+                    for="qrInput"
+                >
+                    Masukkan teks atau URL
+                </label>
+
+
+                <textarea
+                    id="qrInput"
+                    placeholder="Contoh: https://xezzfrist.com"
+                    rows="4"
+                    autocomplete="off"
+                ></textarea>
+
+
+                <button
+                    id="generateButton"
+                    type="button"
+                >
+                    Generate QR
+                </button>
+
+            </div>
+
+
+
+            <!-- PREVIEW -->
+
+            <div class="qr-preview-section">
+
+                <div
+                    id="qrPlaceholder"
+                    class="qr-placeholder"
+                >
+
+                    <div class="placeholder-icon">
+                        QR
+                    </div>
+
+                    <p>
+                        QR code akan muncul di sini
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="qrResult"
+                    class="qr-result hidden"
+                >
+
+                    <div
+                        id="qrCode"
+                        class="qr-code"
+                    ></div>
+
+
+                    <button
+                        id="downloadButton"
+                        type="button"
+                    >
+                        Download PNG
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             INFO
+        =================================================== -->
+
+        <section class="qr-info">
+
+            <div class="info-item">
+
+                <span>
+                    01
+                </span>
+
+                <div>
+
+                    <h3>
+                        Masukkan informasi
+                    </h3>
+
+                    <p>
+                        Tulis teks, URL, atau informasi
+                        yang ingin kamu ubah menjadi QR code.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <span>
+                    02
+                </span>
+
+                <div>
+
+                    <h3>
+                        Generate
+                    </h3>
+
+                    <p>
+                        Klik tombol Generate QR untuk
+                        membuat QR code secara otomatis.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <span>
+                    03
+                </span>
+
+                <div>
+
+                    <h3>
+                        Download
+                    </h3>
+
+                    <p>
+                        Simpan QR code sebagai gambar PNG
+                        dan gunakan sesuai kebutuhanmu.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ==================================================
+         SCRIPT
+    =================================================== -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+    ></script>
+
+    <script src="qr.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        XezzFrist — Web Search
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="search.css"
+    >
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         NAVBAR
+    =================================================== -->
+
+    <header class="search-navbar">
+
+        <a
+            href="index.html"
+            class="back-link"
+        >
+            ←
+            <span>
+                Back to XezzFrist
+            </span>
+        </a>
+
+
+        <div class="search-brand">
+
+            <span class="search-logo">
+                X
+            </span>
+
+            <span>
+                Xezz<span>Frist</span>
+            </span>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         MAIN
+    =================================================== -->
+
+    <main class="search-page">
+
+
+        <!-- ==================================================
+             SEARCH HEADER
+        =================================================== -->
+
+        <section class="search-header">
+
+            <span class="search-label">
+                XEZZFRIST SEARCH
+            </span>
+
+            <h1>
+                Find what you need
+            </h1>
+
+            <p>
+                Cari informasi dari internet dengan cepat
+                dan temukan sumber yang relevan.
+            </p>
+
+
+            <!-- ==================================================
+                 SEARCH FORM
+            =================================================== -->
+
+            <div class="search-form">
+
+                <span class="search-icon">
+                    ⌕
+                </span>
+
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Cari informasi..."
+                    autocomplete="off"
+                >
+
+
+                <button
+                    id="searchButton"
+                    type="button"
+                >
+                    Search
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             SEARCH STATUS
+        =================================================== -->
+
+        <section class="search-status">
+
+            <span id="searchStatus">
+                Masukkan pencarian untuk memulai
+            </span>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             LOADING
+        =================================================== -->
+
+        <div
+            id="searchLoading"
+            class="search-loading hidden"
+        >
+
+            <div class="loading-spinner"></div>
+
+            <span>
+                Sedang mencari informasi...
+            </span>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             RESULTS
+        =================================================== -->
+
+        <section
+            id="searchResults"
+            class="search-results"
+        ></section>
+
+
+
+        <!-- ==================================================
+             EMPTY STATE
+        =================================================== -->
+
+        <section
+            id="searchEmpty"
+            class="search-empty"
+        >
+
+            <div class="empty-icon">
+                ⌕
+            </div>
+
+            <h2>
+                Belum ada hasil
+            </h2>
+
+            <p>
+                Masukkan kata kunci di atas untuk
+                mendapatkan hasil pencarian.
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         SCRIPT
+    =================================================== -->
+
+    <script src="search.js"></script>
+
+
+</body>
+
+</html>

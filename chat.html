@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Xezz AI — XezzFrist</title>
+
+    <link rel="stylesheet" href="chat.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         APP HEADER
+    ========================== -->
+
+    <header class="chat-header">
+
+        <div class="brand">
+
+            <a href="index.html" class="back-button">
+                ←
+            </a>
+
+            <div class="brand-icon">
+                X
+            </div>
+
+            <div class="brand-text">
+                <strong>XezzFrist</strong>
+                <span>Xezz AI</span>
+            </div>
+
+        </div>
+
+
+        <div class="header-actions">
+
+            <button
+                class="new-chat-button"
+                id="newChatButton"
+            >
+                + New Chat
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CHAT AREA
+    ========================== -->
+
+    <main class="chat-layout">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="chat-sidebar">
+
+            <button class="sidebar-new-chat" id="sidebarNewChat">
+                <span>+</span>
+                New Chat
+            </button>
+
+
+            <div class="sidebar-section">
+
+                <p class="sidebar-title">
+                    RECENT
+                </p>
+
+                <div id="chatHistory">
+
+                    <button class="history-item active">
+                        <span>✦</span>
+                        New conversation
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="sidebar-info">
+
+                    <div class="mini-icon">
+                        ?
+                    </div>
+
+                    <div>
+                        <strong>Xezz AI</strong>
+                        <span>Digital Assistant</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- CHAT CONTENT -->
+
+        <section class="chat-main">
+
+
+            <!-- WELCOME -->
+
+            <div
+                class="chat-welcome"
+                id="chatWelcome"
+            >
+
+                <div class="welcome-icon">
+                    ✦
+                </div>
+
+                <h1>
+                    How can I help you?
+                </h1>
+
+                <p>
+                    Tanya apa saja, cari ide, atau ceritakan
+                    masalah digital yang sedang kamu hadapi.
+                </p>
+
+
+                <!-- SUGGESTIONS -->
+
+                <div class="suggestion-grid">
+
+                    <button
+                        class="suggestion-card"
+                        data-prompt="Laptop saya tiba-tiba tidak bisa terhubung ke Wi-Fi. Apa yang harus saya lakukan?"
+                    >
+
+                        <span class="suggestion-icon">
+                            💻
+                        </span>
+
+                        <div>
+                            <strong>
+                                Masalah teknologi
+                            </strong>
+
+                            <small>
+                                Bantu saya memperbaiki perangkat
+                            </small>
+                        </div>
+
+                    </button>
+
+
+                    <button
+                        class="suggestion-card"
+                        data-prompt="Saya ingin belajar coding dari nol. Saya harus mulai dari mana?"
+                    >
+
+                        <span class="suggestion-icon">
+                            ◇
+                        </span>
+
+                        <div>
+                            <strong>
+                                Belajar coding
+                            </strong>
+
+                            <small>
+                                Buatkan roadmap belajar
+                            </small>
+                        </div>
+
+                    </button>
+
+
+                    <button
+                        class="suggestion-card"
+                        data-prompt="Bagaimana cara mencari informasi yang valid dan terpercaya di internet?"
+                    >
+
+                        <span class="suggestion-icon">
+                            🔎
+                        </span>
+
+                        <div>
+                            <strong>
+                                Cari informasi
+                            </strong>
+
+                            <small>
+                                Temukan informasi terpercaya
+                            </small>
+                        </div>
+
+                    </button>
+
+
+                    <button
+                        class="suggestion-card"
+                        data-prompt="Saya ingin membangun bisnis digital. Apa langkah pertama yang sebaiknya saya lakukan?"
+                    >
+
+                        <span class="suggestion-icon">
+                            ✧
+                        </span>
+
+                        <div>
+                            <strong>
+                                Konsultasi ide
+                            </strong>
+
+                            <small>
+                                Diskusikan ide dan rencana
+                            </small>
+                        </div>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- MESSAGES -->
+
+            <div
+                class="messages"
+                id="messages"
+            >
+
+            </div>
+
+
+            <!-- INPUT AREA -->
+
+            <div class="input-wrapper">
+
+                <div class="input-box">
+
+                    <textarea
+                        id="messageInput"
+                        placeholder="Message Xezz AI..."
+                        rows="1"
+                    ></textarea>
+
+
+                    <div class="input-bottom">
+
+                        <div class="input-tools">
+
+                            <button
+                                class="input-tool"
+                                type="button"
+                                title="Attach file"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+
+                        <button
+                            id="sendButton"
+                            class="send-button"
+                            type="button"
+                            title="Send message"
+                        >
+                            ↑
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <p class="disclaimer">
+                    Xezz AI dapat membuat kesalahan. Periksa informasi penting.
+                </p>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         SCRIPT
+    ========================== -->
+
+    <script src="chat.js"></script>
+
+</body>
+</html>

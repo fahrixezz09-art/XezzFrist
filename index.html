@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        XezzFrist — AI Assistant
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         XEZZFRIST INTRO
+    =================================================== -->
+
+    <div class="xezz-intro">
+
+        <div class="intro-orbit"></div>
+
+        <div class="intro-logo">
+
+            <span class="intro-x">
+                X
+            </span>
+
+            <span class="intro-name">
+                Xezz<span>Frist</span>
+            </span>
+
+        </div>
+
+
+        <div class="intro-subtitle">
+            Your Digital Information Hub
+        </div>
+
+
+        <div class="intro-line"></div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         NAVBAR
+    =================================================== -->
+
+    <header class="navbar">
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <span class="logo-icon">
+                X
+            </span>
+
+            <span>
+                Xezz<span>Frist</span>
+            </span>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav>
+
+            <a
+                href="#home"
+                data-i18n="navHome"
+            >
+                Home
+            </a>
+
+
+            <a
+                href="#features"
+                data-i18n="navFeatures"
+            >
+                Features
+            </a>
+
+
+            <a
+                href="#latest"
+                data-i18n="navLatest"
+            >
+                Latest
+            </a>
+
+
+            <a
+                href="#tools"
+                data-i18n="navTools"
+            >
+                Tools
+            </a>
+
+        </nav>
+
+
+
+        <!-- NAVBAR ACTIONS -->
+
+        <div class="navbar-actions">
+
+
+            <!-- LANGUAGE -->
+
+            <div class="language-switcher">
+
+                <button
+                    class="language-btn"
+                    id="languageButton"
+                    onclick="toggleLanguageMenu()"
+                    aria-label="Change language"
+                    type="button"
+                >
+
+                    <span id="currentLanguage">
+                        ID
+                    </span>
+
+                    <span class="language-arrow">
+                        ⌄
+                    </span>
+
+                </button>
+
+
+
+                <div
+                    class="language-menu"
+                    id="languageMenu"
+                >
+
+                    <button
+                        type="button"
+                        onclick="setLanguage('id')"
+                    >
+                        🇮🇩 Indonesia
+                    </button>
+
+
+                    <button
+                        type="button"
+                        onclick="setLanguage('en')"
+                    >
+                        🇺🇸 English
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SIGN IN -->
+
+            <button
+                class="login-btn"
+                onclick="showLogin()"
+                data-i18n="signIn"
+                type="button"
+            >
+                Sign In
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         MAIN
+    =================================================== -->
+
+    <main id="home">
+
+
+        <!-- ==================================================
+             HERO
+        =================================================== -->
+
+        <section class="hero">
+
+
+            <!-- BADGE -->
+
+            <div
+                class="badge"
+                data-i18n="badge"
+            >
+                ✦ Your Digital Information Hub
+            </div>
+
+
+
+            <!-- TITLE -->
+
+            <h1 class="hero-title">
+
+                <span
+                    class="hero-main-line"
+                    data-i18n="heroMain"
+                >
+                    Ayo Bedah Ide Kamu
+                </span>
+
+                <br>
+
+
+                <span class="hero-dynamic">
+
+                    <span class="dynamic-word">
+                        Cari Informasi
+                    </span>
+
+                </span>
+
+            </h1>
+
+
+
+            <!-- DESCRIPTION -->
+
+            <p
+                class="hero-description"
+                data-i18n="heroDescription"
+            >
+                Cari informasi, tanyakan masalah digital,
+                konsultasikan kebutuhanmu, dan temukan
+                berbagai tools dalam satu tempat.
+            </p>
+
+
+
+            <!-- ==================================================
+                 SEARCH
+            =================================================== -->
+
+            <div class="search-container">
+
+
+                <div class="search-box">
+
+
+                    <span class="search-icon">
+                        ⌕
+                    </span>
+
+
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Tanyakan sesuatu atau cari informasi..."
+                        onkeydown="handleSearch(event)"
+                        autocomplete="off"
+                    >
+
+
+                    <button
+                        onclick="startSearch()"
+                        data-i18n="searchButton"
+                        type="button"
+                    >
+                        Search
+                    </button>
+
+                </div>
+
+
+
+                <!-- SEARCH MODES -->
+
+                <div class="search-options">
+
+
+                    <button
+                        onclick="selectMode('AI')"
+                        data-i18n="askAI"
+                        type="button"
+                    >
+                        ✦ Ask AI
+                    </button>
+
+
+                    <a
+                        href="search.html"
+                        class="search-mode-link"
+                        data-i18n="webSearch"
+                    >
+                        ◉ Web Search
+                    </a>
+
+
+                    <button
+                        onclick="selectMode('Consult')"
+                        data-i18n="consult"
+                        type="button"
+                    >
+                        ♢ Consult
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             FEATURES
+        =================================================== -->
+
+        <section
+            class="section"
+            id="features"
+        >
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <span
+                        class="section-label"
+                        data-i18n="exploreLabel"
+                    >
+                        EXPLORE
+                    </span>
+
+
+                    <h2 data-i18n="exploreTitle">
+                        Everything you need.
+                    </h2>
+
+                </div>
+
+
+
+                <p data-i18n="exploreDescription">
+                    Satu platform untuk berbagai kebutuhan digital.
+                </p>
+
+            </div>
+
+
+
+            <div class="feature-grid">
+
+
+                <!-- XEZZ AI -->
+
+                <div class="feature-card featured">
+
+
+                    <div class="card-icon">
+                        ✦
+                    </div>
+
+
+                    <h3 data-i18n="xezzAI">
+                        Xezz AI
+                    </h3>
+
+
+                    <p data-i18n="xezzAIDescription">
+                        Tanyakan masalah, cari jawaban,
+                        dan diskusikan ide bersama AI.
+                    </p>
+
+
+                    <button
+                        onclick="openFeature('AI')"
+                        data-i18n="tryAI"
+                        type="button"
+                    >
+                        Try Xezz AI →
+                    </button>
+
+                </div>
+
+
+
+                <!-- WEB SEARCH -->
+
+                <div class="feature-card">
+
+
+                    <div class="card-icon">
+                        ⌕
+                    </div>
+
+
+                    <h3 data-i18n="webSearchTitle">
+                        Web Search
+                    </h3>
+
+
+                    <p data-i18n="webSearchDescription">
+                        Temukan informasi dari internet
+                        dengan lebih cepat dan terorganisir.
+                    </p>
+
+
+                    <a
+                        href="search.html"
+                        class="feature-action"
+                        data-i18n="searchWeb"
+                    >
+                        Search Web →
+                    </a>
+
+                </div>
+
+
+
+                <!-- CONSULTATION -->
+
+                <div class="feature-card">
+
+
+                    <div class="card-icon">
+                        ♢
+                    </div>
+
+
+                    <h3 data-i18n="consultationTitle">
+                        Consultation
+                    </h3>
+
+
+                    <p data-i18n="consultationDescription">
+                        Butuh bantuan? Konsultasikan
+                        masalah digitalmu.
+                    </p>
+
+
+                    <button
+                        onclick="openFeature('Consult')"
+                        data-i18n="getConsultation"
+                        type="button"
+                    >
+                        Get Consultation →
+                    </button>
+
+                </div>
+
+
+
+                <!-- XEZZ TOOLS -->
+
+                <div class="feature-card">
+
+
+                    <div class="card-icon">
+                        ◈
+                    </div>
+
+
+                    <h3 data-i18n="toolsTitle">
+                        Xezz Tools
+                    </h3>
+
+
+                    <p data-i18n="toolsDescription">
+                        Berbagai tools sederhana untuk
+                        membantu pekerjaan digitalmu.
+                    </p>
+
+
+                    <button
+                        onclick="openFeature('Tools')"
+                        data-i18n="exploreTools"
+                        type="button"
+                    >
+                        Explore Tools →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             LATEST
+        =================================================== -->
+
+        <section
+            class="section latest-section"
+            id="latest"
+        >
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <span
+                        class="section-label"
+                        data-i18n="latestLabel"
+                    >
+                        LATEST
+                    </span>
+
+
+                    <h2 data-i18n="latestTitle">
+                        What's happening?
+                    </h2>
+
+                </div>
+
+
+
+                <a
+                    href="#"
+                    class="view-all"
+                    data-i18n="viewAll"
+                >
+                    View all →
+                </a>
+
+            </div>
+
+
+
+            <div class="news-grid">
+
+
+                <!-- NEWS 1 -->
+
+                <article class="news-card">
+
+
+                    <div
+                        class="news-category"
+                        data-i18n="technology"
+                    >
+                        TECHNOLOGY
+                    </div>
+
+
+                    <h3 data-i18n="news1Title">
+                        Artificial Intelligence is changing
+                        the way people search for information.
+                    </h3>
+
+
+                    <p data-i18n="news1Description">
+                        Discover how AI-powered search is
+                        transforming the digital world.
+                    </p>
+
+
+                    <span
+                        class="news-date"
+                        data-i18n="today5"
+                    >
+                        Today · 5 min read
+                    </span>
+
+                </article>
+
+
+
+                <!-- NEWS 2 -->
+
+                <article class="news-card">
+
+
+                    <div
+                        class="news-category"
+                        data-i18n="digital"
+                    >
+                        DIGITAL
+                    </div>
+
+
+                    <h3 data-i18n="news2Title">
+                        Useful digital tools you should know
+                        about.
+                    </h3>
+
+
+                    <p data-i18n="news2Description">
+                        Explore tools that can make your
+                        everyday digital tasks easier.
+                    </p>
+
+
+                    <span
+                        class="news-date"
+                        data-i18n="today4"
+                    >
+                        Today · 4 min read
+                    </span>
+
+                </article>
+
+
+
+                <!-- NEWS 3 -->
+
+                <article class="news-card">
+
+
+                    <div
+                        class="news-category"
+                        data-i18n="trending"
+                    >
+                        TRENDING
+                    </div>
+
+
+                    <h3 data-i18n="news3Title">
+                        What's trending in the digital world?
+                    </h3>
+
+
+                    <p data-i18n="news3Description">
+                        Stay updated with interesting topics
+                        from technology and the internet.
+                    </p>
+
+
+                    <span
+                        class="news-date"
+                        data-i18n="today3"
+                    >
+                        Today · 3 min read
+                    </span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             TOOLS
+        =================================================== -->
+
+        <section
+            class="section tools-section"
+            id="tools"
+        >
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <span
+                        class="section-label"
+                        data-i18n="toolsLabel"
+                    >
+                        TOOLS
+                    </span>
+
+
+                    <h2 data-i18n="toolsSectionTitle">
+                        Small tools. Big help.
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="tools-grid">
+
+
+                <!-- QR -->
+
+                <a
+                    href="qr.html"
+                    class="tool-item"
+                    aria-label="Open QR Generator"
+                >
+
+                    <span>
+                        QR
+                    </span>
+
+
+                    <div>
+
+                        <h4 data-i18n="qrGenerator">
+                            QR Generator
+                        </h4>
+
+
+                        <p data-i18n="qrDescription">
+                            Create QR codes instantly.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- TEXT -->
+
+                <a
+                    href="text.html"
+                    class="tool-item"
+                    aria-label="Open Text Tools"
+                >
+
+                    <span>
+                        TXT
+                    </span>
+
+
+                    <div>
+
+                        <h4 data-i18n="textTools">
+                            Text Tools
+                        </h4>
+
+
+                        <p data-i18n="textDescription">
+                            Format and process text.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- IMAGE -->
+
+                <div class="tool-item">
+
+
+                    <span>
+                        IMG
+                    </span>
+
+
+                    <div>
+
+                        <h4 data-i18n="imageTools">
+                            Image Tools
+                        </h4>
+
+
+                        <p data-i18n="imageDescription">
+                            Simple image utilities.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- URL -->
+
+                <div class="tool-item">
+
+
+                    <span>
+                        ↗
+                    </span>
+
+
+                    <div>
+
+                        <h4 data-i18n="urlTools">
+                            URL Tools
+                        </h4>
+
+
+                        <p data-i18n="urlDescription">
+                            Useful URL utilities.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             CTA
+        =================================================== -->
+
+        <section class="cta">
+
+
+            <div class="cta-glow"></div>
+
+
+            <span>
+                ✦
+            </span>
+
+
+            <h2 data-i18n="ctaTitle">
+                Your next answer<br>
+                is one search away.
+            </h2>
+
+
+            <p data-i18n="ctaDescription">
+                Start exploring XezzFrist today.
+            </p>
+
+
+            <button
+                onclick="focusSearch()"
+                data-i18n="startExploring"
+                type="button"
+            >
+                Start Exploring →
+            </button>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ==================================================
+         FOOTER
+    =================================================== -->
+
+    <footer>
+
+
+        <div class="footer-logo">
+
+
+            <span class="logo-icon">
+                X
+            </span>
+
+
+            XezzFrist
+
+        </div>
+
+
+        <p data-i18n="footerTagline">
+            Ask. Search. Discover.
+        </p>
+
+
+        <span>
+            © 2026 XezzFrist
+        </span>
+
+    </footer>
+
+
+
+    <!-- ==================================================
+         NOTIFICATION
+    =================================================== -->
+
+    <div
+        id="notification"
+        class="notification"
+    ></div>
+
+
+
+    <!-- ==================================================
+         SCRIPT
+    =================================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

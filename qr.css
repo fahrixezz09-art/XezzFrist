@@ -1,0 +1,668 @@
+/* ==================================================
+   XEZZFRIST — QR GENERATOR
+================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+/* ==================================================
+   GLOBAL
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: 'Inter', sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(100, 120, 255, 0.10),
+            transparent 38%
+        ),
+        #07080c;
+
+    color: #f5f7fa;
+
+    overflow-x: hidden;
+}
+
+button,
+textarea {
+    font-family: inherit;
+}
+
+
+/* ==================================================
+   NAVBAR
+================================================== */
+
+.qr-navbar {
+    width: 100%;
+    height: 72px;
+
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    background:
+        rgba(7, 8, 12, 0.82);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+
+/* ==================================================
+   BACK BUTTON
+================================================== */
+
+.back-link {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #858b98;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.back-link:hover {
+    color: #ffffff;
+
+    transform:
+        translateX(-2px);
+}
+
+
+/* ==================================================
+   BRAND
+================================================== */
+
+.qr-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    color: #f5f7fa;
+}
+
+.qr-brand > span:last-child > span {
+    opacity: 0.55;
+}
+
+
+/* ==================================================
+   QR LOGO
+================================================== */
+
+.qr-logo {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.16);
+
+    border-radius: 8px;
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+
+/* ==================================================
+   PAGE
+================================================== */
+
+.qr-page {
+    width: 90%;
+    max-width: 1050px;
+
+    margin: auto;
+
+    padding:
+        90px 0 110px;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.qr-header {
+    text-align: center;
+
+    max-width: 650px;
+
+    margin:
+        0 auto 55px;
+}
+
+.qr-label {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: #687080;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.qr-header h1 {
+    font-size:
+        clamp(42px, 5vw, 68px);
+
+    line-height: 1;
+
+    letter-spacing: -0.045em;
+
+    font-weight: 600;
+
+    color: #f4f6fa;
+}
+
+.qr-header p {
+    margin-top: 22px;
+
+    color: #858a95;
+
+    font-size: 15px;
+
+    line-height: 1.75;
+}
+
+
+/* ==================================================
+   GENERATOR CARD
+================================================== */
+
+.qr-generator {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 18px;
+}
+
+
+/* ==================================================
+   GENERATOR PANELS
+================================================== */
+
+.qr-input-section,
+.qr-preview-section {
+    min-height: 430px;
+
+    padding: 30px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    box-shadow:
+        0 20px 70px
+        rgba(0, 0, 0, 0.20);
+}
+
+
+/* ==================================================
+   INPUT
+================================================== */
+
+.qr-input-section {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.qr-input-section label {
+    margin-bottom: 12px;
+
+    color: #dfe3ea;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+.qr-input-section textarea {
+    width: 100%;
+
+    min-height: 150px;
+
+    resize: vertical;
+
+    outline: none;
+
+    padding: 15px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    border-radius: 12px;
+
+    background:
+        rgba(0, 0, 0, 0.16);
+
+    color: #f5f7fa;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.qr-input-section textarea::placeholder {
+    color: #5f6571;
+}
+
+.qr-input-section textarea:focus {
+    border-color:
+        rgba(124, 140, 255, 0.45);
+
+    background:
+        rgba(0, 0, 0, 0.22);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(124, 140, 255, 0.05);
+}
+
+
+/* ==================================================
+   GENERATE BUTTON
+================================================== */
+
+#generateButton {
+    width: 100%;
+
+    height: 48px;
+
+    margin-top: 18px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background:
+        #f2f4f7;
+
+    color: #090a0d;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+#generateButton:hover {
+    transform:
+        translateY(-1px);
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 10px 30px
+        rgba(255, 255, 255, 0.07);
+}
+
+#generateButton:active {
+    transform:
+        scale(0.985);
+}
+
+
+/* ==================================================
+   PREVIEW SECTION
+================================================== */
+
+.qr-preview-section {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+}
+
+
+/* ==================================================
+   PLACEHOLDER
+================================================== */
+
+.qr-placeholder {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.placeholder-icon {
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    border-radius: 16px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    color: #7c8cff;
+
+    font-size: 16px;
+
+    font-weight: 600;
+}
+
+.qr-placeholder p {
+    color: #626875;
+
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   QR RESULT
+================================================== */
+
+.qr-result {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.qr-result.hidden {
+    display: none;
+}
+
+
+/* ==================================================
+   QR CODE
+================================================== */
+
+.qr-code {
+    padding: 16px;
+
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.35);
+}
+
+.qr-code img,
+.qr-code canvas {
+    display: block;
+
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ==================================================
+   DOWNLOAD BUTTON
+================================================== */
+
+#downloadButton {
+    height: 44px;
+
+    padding: 0 20px;
+
+    margin-top: 20px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    color: #dfe3ea;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+#downloadButton:hover {
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-color:
+        rgba(255, 255, 255, 0.18);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* ==================================================
+   INFO
+================================================== */
+
+.qr-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.info-item {
+    display: flex;
+
+    gap: 15px;
+
+    padding: 22px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    border-radius: 15px;
+
+    background:
+        rgba(255, 255, 255, 0.018);
+}
+
+.info-item > span {
+    flex-shrink: 0;
+
+    color: #697181;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+.info-item h3 {
+    margin-bottom: 6px;
+
+    color: #dfe3ea;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+.info-item p {
+    color: #676e7b;
+
+    font-size: 11px;
+
+    line-height: 1.65;
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 800px) {
+
+    .qr-navbar {
+        padding: 0 20px;
+    }
+
+    .qr-page {
+        width: 90%;
+
+        padding:
+            70px 0 80px;
+    }
+
+    .qr-generator {
+        grid-template-columns: 1fr;
+    }
+
+    .qr-input-section,
+    .qr-preview-section {
+        min-height: auto;
+    }
+
+    .qr-preview-section {
+        min-height: 380px;
+    }
+
+    .qr-info {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .qr-brand {
+        font-size: 15px;
+    }
+
+    .qr-logo {
+        width: 28px;
+        height: 28px;
+    }
+
+    .back-link span {
+        display: none;
+    }
+
+    .qr-header h1 {
+        font-size:
+            clamp(38px, 11vw, 54px);
+    }
+
+    .qr-header p {
+        font-size: 13px;
+    }
+
+    .qr-input-section,
+    .qr-preview-section {
+        padding: 22px;
+    }
+
+}

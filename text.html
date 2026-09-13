@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        XezzFrist — Text Tools
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="text.css"
+    >
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         NAVBAR
+    =================================================== -->
+
+    <header class="text-navbar">
+
+        <a
+            href="index.html"
+            class="back-link"
+        >
+            ←
+            <span>
+                Back to XezzFrist
+            </span>
+        </a>
+
+
+        <div class="text-brand">
+
+            <span class="text-logo">
+                X
+            </span>
+
+            <span>
+                Xezz<span>Frist</span>
+            </span>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         MAIN
+    =================================================== -->
+
+    <main class="text-page">
+
+
+        <!-- ==================================================
+             HEADER
+        =================================================== -->
+
+        <section class="text-header">
+
+            <span class="text-label">
+                DIGITAL TOOL
+            </span>
+
+            <h1>
+                Text Tools
+            </h1>
+
+            <p>
+                Kelola, hitung, dan rapikan teks dengan
+                berbagai tools sederhana dalam satu tempat.
+            </p>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             EDITOR
+        =================================================== -->
+
+        <section class="text-editor-card">
+
+
+            <div class="editor-top">
+
+                <div>
+
+                    <label for="textInput">
+                        Masukkan teks
+                    </label>
+
+                    <span
+                        id="textStatus"
+                        class="text-status"
+                    >
+                        Ready
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <textarea
+                id="textInput"
+                placeholder="Tulis atau tempel teks di sini..."
+                spellcheck="false"
+            ></textarea>
+
+
+            <!-- ==================================================
+                 ACTIONS
+            =================================================== -->
+
+            <div class="text-actions">
+
+                <button
+                    id="uppercaseButton"
+                    type="button"
+                >
+                    Uppercase
+                </button>
+
+
+                <button
+                    id="lowercaseButton"
+                    type="button"
+                >
+                    Lowercase
+                </button>
+
+
+                <button
+                    id="removeSpacesButton"
+                    type="button"
+                >
+                    Clean Spaces
+                </button>
+
+
+                <button
+                    id="copyButton"
+                    type="button"
+                >
+                    Copy
+                </button>
+
+
+                <button
+                    id="clearButton"
+                    type="button"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             STATISTICS
+        =================================================== -->
+
+        <section class="text-stats">
+
+
+            <div class="stat-card">
+
+                <span class="stat-number" id="wordCount">
+                    0
+                </span>
+
+                <span class="stat-label">
+                    Words
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-number" id="characterCount">
+                    0
+                </span>
+
+                <span class="stat-label">
+                    Characters
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-number" id="characterNoSpaceCount">
+                    0
+                </span>
+
+                <span class="stat-label">
+                    No Spaces
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-number" id="lineCount">
+                    0
+                </span>
+
+                <span class="stat-label">
+                    Lines
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             EXTRA TOOLS
+        =================================================== -->
+
+        <section class="text-info">
+
+            <div class="text-info-card">
+
+                <span>
+                    01
+                </span>
+
+                <div>
+
+                    <h3>
+                        Word Counter
+                    </h3>
+
+                    <p>
+                        Hitung jumlah kata dan karakter
+                        dari teks yang kamu masukkan.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="text-info-card">
+
+                <span>
+                    02
+                </span>
+
+                <div>
+
+                    <h3>
+                        Text Formatter
+                    </h3>
+
+                    <p>
+                        Ubah huruf menjadi uppercase,
+                        lowercase, atau rapikan spasi.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="text-info-card">
+
+                <span>
+                    03
+                </span>
+
+                <div>
+
+                    <h3>
+                        Quick Copy
+                    </h3>
+
+                    <p>
+                        Salin teks hasil pengolahan
+                        dengan satu klik.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ==================================================
+         SCRIPT
+    =================================================== -->
+
+    <script src="text.js"></script>
+
+</body>
+
+</html>
